@@ -44,17 +44,38 @@ public class Matriser {
 	// e)
 	public static int[][] speile(int[][] matrise) {
 
-		// TODO
+    int n = matrise.length;
+    int[][] nyMatrise = new int[n][n];
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            nyMatrise[i][j] = matrise[i][j];
+        }
+    }
+    for (int i = 0; i < n; i++) {
+        for (int j = i + 1; j < n; j++) {
+            int temp = nyMatrise[i][j];
+            nyMatrise[i][j] = nyMatrise[j][i];
+            nyMatrise[j][i] = temp;
+        }
+    }
 
-		throw new UnsupportedOperationException("Metoden speile ikke implementert");
-	
-	}
+    return nyMatrise;
+}
 
 	// f)
 	public static int[][] multipliser(int[][] a, int[][] b) {
-
-		// TODO
-		throw new UnsupportedOperationException("Metoden multipliser ikke implementert");
-	
+		int raderA = a.length;
+		int kolonnerA = a[0].length;
+		int kolonnerB = b[0].length;
+		int[][] resultat = new int[raderA][kolonnerB];
+		for (int i = 0; i < raderA; i++) {
+			for (int j = 0; j < kolonnerB; j++) {
+				resultat[i][j] = 0;
+				for (int k = 0; k < kolonnerA; k++) {
+					resultat[i][j] += a[i][k] * b[k][j];
+				}
+			}
+		}
+		return resultat;
 	}
 }
