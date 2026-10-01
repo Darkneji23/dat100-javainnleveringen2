@@ -27,21 +27,55 @@ public class Matriser {
 	}
 	// c)
 	public static int[][] skaler(int tall, int[][] matrise) {
-		
-		// TODO
-		throw new UnsupportedOperationException("Metoden skaler ikke implementert");
+
+		if (matrise == null || matrise.length == 0){
+			return new int[0][0];
+
+		}
+
+		int rader = matrise.length;
+		int koloner = matrise[0].length;
+		int[][] nyMatrise= new int[rader][koloner];
+
+		for (int i = 0; i < rader ; i++){
+			for (int j = 0; j < koloner; j++){
+				nyMatrise[i][j]= nyMatrise[i][j] * tall;
+
+			}
+		}
+
+		return nyMatrise;
+
+
+
 	
 	}
 
 	// d)
 	public static boolean erLik(int[][] a, int[][] b) {
 
-		// TODO
-		throw new UnsupportedOperationException("Metoden erLik ikke implementert");
+		if (a == b) return true;
+		if (a == null || b = null) return false;
+		if (a.length != b.length) return  false;
+
+		for (int i = 0; i < a.length; i++){
+
+			if (a[i].length != b[i].length) return false;
+
+			for (int j = 0; j < a[i].legnth; j++){
+				if (a[i][j] != b[i][j]){
+					return false;
+
+				}
+			}
+		}
+
+		return true;
+
 		
 	}
 	
-	// e)
+	// e)S
 	public static int[][] speile(int[][] matrise) {
 
     int n = matrise.length;
