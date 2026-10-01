@@ -2,21 +2,29 @@ package no.hvl.dat100.matriser;
 
 public class Matriser {
 
-	// a)
+	// a) Skriver ut matrisen med to utvidede for-løkker
 	public static void skrivUt(int[][] matrise) {
-		
-		// TODO
-		throw new UnsupportedOperationException("Metoden skrivUt ikke implementert");
+		for (int[] rad : matrise) {
+			for (int tall : rad) {
+				System.out.print(tall + " ");
+			}
+			System.out.println();
+		}
 	}
 
-	// b)
+	// b) Lager tekst med mellomrom etter hvert tall og linjeskift etter hver rad
 	public static String tilStreng(int[][] matrise) {
+		String tekst = "";
 
-		// TODO
-		throw new UnsupportedOperationException("Metoden tilStreng ikke implementert");
-		
+		for (int[] rad : matrise) {
+			for (int tall : rad) {
+				tekst += tall + " ";
+			}
+			tekst += "\n";
+		}
+
+		return tekst;
 	}
-
 	// c)
 	public static int[][] skaler(int tall, int[][] matrise) {
 		
