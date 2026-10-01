@@ -39,7 +39,7 @@ public class Matriser {
 
 		for (int i = 0; i < rader ; i++){
 			for (int j = 0; j < koloner; j++){
-				nyMatrise[i][j]= nyMatrise[i][j] * tall;
+				nyMatrise[i][j]= matrise[i][j] * tall;
 
 			}
 		}
@@ -55,14 +55,14 @@ public class Matriser {
 	public static boolean erLik(int[][] a, int[][] b) {
 
 		if (a == b) return true;
-		if (a == null || b = null) return false;
+		if (a == null || b == null) return false;
 		if (a.length != b.length) return  false;
 
 		for (int i = 0; i < a.length; i++){
 
 			if (a[i].length != b[i].length) return false;
 
-			for (int j = 0; j < a[i].legnth; j++){
+			for (int j = 0; j < a[i].length; j++){
 				if (a[i][j] != b[i][j]){
 					return false;
 
